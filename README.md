@@ -12,16 +12,6 @@
   </p>
 </p>
 
-<!-- Índice -->
-## 🗂 Índice
-
-* [Sobre o projeto](#book-about-the-project)
-  * [Tecnologias](#computer-technologies)
-  * [Requisitos](#construction-requirements)
-* [Instalação](#bricks-installation)
-  * [Instalando Dependências](#construction-installing-dependencies)
-  * [Execução](#arrow_forward-running)
-
 ## :book: Sobre o projeto
 
 
@@ -67,7 +57,6 @@ $ yarn install
 Execute o seguinte comando para instalar o expo Go do próprio projeto e rodar:
 
 ```bash
-# instalar o expo Go
 $ npx expo start --dev-client
 ```
 

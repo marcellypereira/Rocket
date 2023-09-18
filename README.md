@@ -57,7 +57,6 @@ $ yarn install
 Execute o seguinte comando para instalar o expo Go do próprio projeto e rodar:
 
 ```bash
-# instalar o expo Go
 $ npx expo start --dev-client
 ```
 

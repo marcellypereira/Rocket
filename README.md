@@ -32,7 +32,7 @@ O projeto envolve a criação de um sistema de tickets para fins de aprendizagem
 * [React Native](https://reactnative.dev/)
 
 ### :construction: Requisitos
-- Qualquer sistema operacional com [react-native-cli](https://reactnative.dev/docs/environment-setup) instalada.
+- Qualquer sistema operacional com [Expo](https://docs.expo.dev/get-started/installation/) instalado.
 
 ## :bricks: Instalação
 

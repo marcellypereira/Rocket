@@ -70,5 +70,10 @@ Execute o seguinte comando para instalar o expo Go do próprio projeto e rodar:
 $ npx expo start --dev-client
 ```
 
+### 🚨 Login 
+- E-mail: teste@teste.com
+- Senha: teste123
+
+
 
 <p align="center">Desenvolvido por Marcelly Pereira 💜</p>

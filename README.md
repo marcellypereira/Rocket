@@ -1,6 +1,9 @@
 <p align="center">
   <h3 align="center">Rocket Help</h3>
 
+  <p align="center">
+    <img src="imgRocket.png" alt="Img" />
+  </p>
 
   <p align="center">
     Este aplicativo foi desenvolvido como um projeto de estudo.

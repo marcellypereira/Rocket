@@ -23,6 +23,13 @@
 
 ## :book: Sobre o projeto
 
+### :art: Layout
+
+Você pode acessar o layout do projeto no link abaixo:
+
+* [Layout](https://www.figma.com/file/cYbyOFMyHC8YdTktyh7OrN/RocketHelp---Missao-4?type=design&node-id=915-292&mode=design&t=lsaSD1tonfDhWuLx-0)
+* 🚨 Você precisa ter uma conta no [Figma](https://www.figma.com) para cessar o layout.
+
 
 O projeto envolve a criação de um sistema de tickets para fins de aprendizagem, utilizando React Native.
 ### :computer: Tecnologias

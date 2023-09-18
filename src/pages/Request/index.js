@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   ScrollView,
@@ -19,14 +19,68 @@ import {
 import { TouchableOpacity } from 'react-native';
 import moment from 'moment';
 import { useRequest } from '../RequestContext';
+import notifee, { AndroidImportance } from '@notifee/react-native';
 
 export default function Request({ navigation }) {
   const { requests, completedRequests, handleNewRequest } = useRequest();
   const [activeButton, setActiveButton] = useState('emAndamento');
 
+  const createAndDisplayNotification = async () => {
+    await notifee.requestPermission();
+
+    const channelId = await notifee.createChannel({
+      id: 'default',
+      name: 'Default Channel',
+      importance: AndroidImportance.HIGH,
+    });
+
+    const title = 'Bem-vindo ao nosso aplicativo!';
+    const text = 'Você fez login com sucesso.';
+
+    await notifee.displayNotification({
+      title: title,
+      body: text,
+      android: {
+        channelId,
+        pressAction: {
+          id: 'default',
+        },
+      },
+    });
+  };
+
+  const createAndDisplayLogoutNotification = async () => {
+    await notifee.requestPermission();
+
+    const channelId = await notifee.createChannel({
+      id: 'default',
+      name: 'Default Channel',
+      importance: AndroidImportance.HIGH,
+    });
+
+    const title = 'Até logo!';
+    const text = 'Você fez logout com sucesso.';
+
+    await notifee.displayNotification({
+      title: title,
+      body: text,
+      android: {
+        channelId,
+        pressAction: {
+          id: 'default',
+        },
+      },
+    });
+  };
+
   const handleLogout = () => {
+    createAndDisplayLogoutNotification();
     navigation.navigate('Login');
   };
+
+  useEffect(() => {
+    createAndDisplayNotification();
+  }, []);
 
   return (
     <View bg="#121214" flex={1} position="relative">

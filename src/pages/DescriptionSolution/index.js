@@ -7,12 +7,37 @@ import {
 } from '@expo/vector-icons';
 import moment from 'moment';
 import { useRequest } from '../RequestContext';
+import notifee, { AndroidImportance } from '@notifee/react-native';
 
 export default function DescriptionSolution({ route, navigation }) {
   const { numeroPatrimonio, descricaoProblema } = route.params;
   const { handleNewRequest } = useRequest();
 
   const [solution, setSolution] = useState('');
+
+  const createAndDisplayNotificationFinalizado = async () => {
+    await notifee.requestPermission();
+
+    const channelId = await notifee.createChannel({
+      id: 'default',
+      name: 'Default Channel',
+      importance: AndroidImportance.HIGH,
+    });
+
+    const title = 'Ticket Concluído!';
+    const text = 'Seu ticket foi concluído com sucesso.';
+
+    await notifee.displayNotification({
+      title: title,
+      body: text,
+      android: {
+        channelId,
+        pressAction: {
+          id: 'default',
+        },
+      },
+    });
+  };
 
   const handleCadastrar = () => {
     const newRequest = {
@@ -22,7 +47,11 @@ export default function DescriptionSolution({ route, navigation }) {
       timestamp: new Date(),
       status: 'finalizado',
     };
+
     handleNewRequest(newRequest);
+
+    createAndDisplayNotificationFinalizado();
+
     navigation.navigate('Request');
   };
 

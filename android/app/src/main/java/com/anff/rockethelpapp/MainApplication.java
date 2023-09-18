@@ -1,4 +1,4 @@
-package com.marcellyp.rocket;
+package com.anff.rockethelpapp;
 
 import android.app.Application;
 import android.content.res.Configuration;

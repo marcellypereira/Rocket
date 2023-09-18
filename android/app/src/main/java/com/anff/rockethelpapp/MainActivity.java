@@ -1,4 +1,4 @@
-package com.marcellyp.rocket;
+package com.anff.rockethelpapp;
 
 import android.os.Build;
 import android.os.Bundle;

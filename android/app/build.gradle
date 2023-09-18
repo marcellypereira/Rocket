@@ -81,9 +81,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.rocket"
+    namespace 'com.anff.rockethelpapp'
     defaultConfig {
-        applicationId 'com.marcellyp.rocket'
+        applicationId 'com.anff.rockethelpapp'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

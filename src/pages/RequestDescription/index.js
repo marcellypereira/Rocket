@@ -7,22 +7,27 @@ import {
   Center,
   Input,
   TextArea,
+  Image,
 } from 'native-base';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useRequest } from '../RequestContext';
+import notifee, { AndroidImportance } from '@notifee/react-native';
 
 export default function RequestDescription({ route, navigation }) {
   const { handleNewRequest } = useRequest();
   const [numeroPatrimonio, setNumeroPatrimonio] = useState('');
   const [descricaoProblema, setDescricaoProblema] = useState('');
 
-  const handleCadastrar = () => {
+  const handleCadastrar = async () => {
     const newRequest = {
       numeroPatrimonio: numeroPatrimonio,
       descricaoProblema: descricaoProblema,
     };
 
     handleNewRequest(newRequest);
+
+    await createAndDisplayNotification();
+
     navigation.navigate('Request');
   };
 
@@ -45,6 +50,30 @@ export default function RequestDescription({ route, navigation }) {
       ),
     });
   }, []);
+
+  const createAndDisplayNotification = async () => {
+    await notifee.requestPermission();
+
+    const channelId = await notifee.createChannel({
+      id: 'default',
+      name: 'Default Channel',
+      importance: AndroidImportance.HIGH,
+    });
+
+    const title = 'Ticket Criado!';
+    const text = 'Um novo ticket foi registrado em nosso sistema.';
+
+    await notifee.displayNotification({
+      title: title,
+      body: text,
+      android: {
+        channelId,
+        pressAction: {
+          id: 'default',
+        },
+      },
+    });
+  };
 
   return (
     <View bg="#202024" flex={1} position="relative">

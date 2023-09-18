@@ -30,6 +30,7 @@ O projeto envolve a criação de um sistema de tickets para fins de aprendizagem
 * [Javascript](https://www.javascript.com/)
 * [Node.js](https://nodejs.org/en/)
 * [React Native](https://reactnative.dev/)
+* [Expo](https://docs.expo.dev/get-started/installation/)
 
 ### :construction: Requisitos
 - Qualquer sistema operacional com [Expo](https://docs.expo.dev/get-started/installation/) instalado.

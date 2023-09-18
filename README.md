@@ -72,7 +72,7 @@ $ npx expo start --dev-client
 
 ### 🚨 Login 
 - E-mail: teste@teste.com
-- Senha: teste123
+- Senha: 1234
 
 
 
